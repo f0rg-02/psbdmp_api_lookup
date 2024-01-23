@@ -23,10 +23,10 @@ exit_abnormal() { # Function: Exit with error.
 }
 
 no_args() {
-        echo "[!] Not all required arugments were supplied"
-        echo "---------------"
-        exit_abnormal
-        exit
+  echo "[!] Not all required arugments were supplied"
+  echo "---------------"
+  exit_abnormal
+  exit
 }
 
 DOMAIN=""
@@ -95,9 +95,7 @@ function scrape() {
         echo "Got all ids"
        
         while IFS= read -r id
-        do
-                #output=$(curl -s -X GET "https://psbdmp.ws/api/v3/dump/"$id"")
-                
+        do                
                 if [[ $OUTPUT_FILE == 1 ]]
                 then
                         output_file$("$OUTPUT_FOLDER"/dumps/$(uuidgen).txt)
